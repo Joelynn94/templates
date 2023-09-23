@@ -1,13 +1,37 @@
 type ButtonProps = {
   children: React.ReactNode
-} & React.ComponentPropsWithoutRef<'button'>
+  variant?: 'default' | 'primary' | 'secondary'
+  size?: 'sm' | 'md' | 'lg'
+  className?: string
+  onClick?: () => void
+  props?: any
+}
 
-export default function Button({ children, ...props }: ButtonProps) {
+export default function Button({
+  children,
+  variant = 'default',
+  size = 'md',
+  className,
+  onClick,
+  ...props
+}: ButtonProps) {
+  const baseStyle =
+    'inline-flex items-center px-4 py-2 font-medium text-white rounded-3xl shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2'
+  const sizeStyle = {
+    sm: 'text-sm',
+    md: 'text-base',
+    lg: 'text-lg'
+  }
+  const variantStyle = {
+    default: 'bg-indigo-950 hover:opacity-70 focus:ring-indigo-950',
+    primary:
+      'bg-gradient-to-b from-orange-400 to-pink-500 focus:ring-orange-400 hover:opacity-70',
+    secondary:
+      'bg-gradient-to-b from-purple-500 to-pink-500 hover:opacity-70 focus:ring-purple-500'
+  }
+  const classes = `${baseStyle} ${sizeStyle[size]} ${variantStyle[variant]} ${className}`
   return (
-    <button
-      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-      {...props}
-    >
+    <button type="button" className={classes} onClick={onClick} {...props}>
       {children}
     </button>
   )
