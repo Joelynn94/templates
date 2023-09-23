@@ -4,7 +4,6 @@ type ButtonProps = {
   size?: 'sm' | 'md' | 'lg'
   className?: string
   onClick?: () => void
-  props?: any
 }
 
 export default function Button({
@@ -16,7 +15,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const baseStyle =
-    'inline-flex items-center px-4 py-2 font-medium text-white rounded-3xl shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2'
+    'inline-flex items-center px-6 py-3 font-medium text-white rounded-3xl shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2'
   const sizeStyle = {
     sm: 'text-sm',
     md: 'text-base',
