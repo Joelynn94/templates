@@ -1,6 +1,6 @@
 type BodyTextProps = {
   children: React.ReactNode
-  size: 'sm' | 'md' | 'lg'
+  size: 'sm' | 'md' | 'lg' | 'xl'
   className?: string
 }
 
@@ -14,7 +14,8 @@ export default function BodyText({
   const sizeStyle = {
     sm: 'text-sm',
     md: 'text-base',
-    lg: 'text-lg'
+    lg: 'text-lg',
+    xl: 'text-xl font-extrabold'
   }
   const classes = `${baseStyle} ${sizeStyle[size]} ${className}`
 
