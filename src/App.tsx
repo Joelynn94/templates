@@ -1,10 +1,10 @@
-import Button from './Button'
-import Heading from './Heading'
-import BodyText from './BodyText'
-import CourseCard from './CourseCard'
-import Navigation from './Navigation'
-import Footer from './Footer'
-import SpecialCard from './SpecialCard'
+import Button from './components/Button'
+import Heading from './components/Heading'
+import BodyText from './components/BodyText'
+import CourseCard from './components/CourseCard'
+import Navigation from './components/Navigation'
+import Footer from './components/Footer'
+import SpecialCard from './components/SpecialCard'
 
 export default function App() {
   return (
